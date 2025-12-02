@@ -1,0 +1,7 @@
+{
+  "name": "DEEP SHIFT INTERNSHIP MANAGEMENT SYSTEM V9.2",
+  "description": "A comprehensive React application for managing internships, featuring real-time logbooks, task tracking, and supervisor evaluation tools powered by Gemini AI.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
