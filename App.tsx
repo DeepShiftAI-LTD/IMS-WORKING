@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { supabase } from './lib/supabaseClient';
 import { APP_NAME, MOCK_SKILLS, MOCK_BADGES } from './constants';
@@ -844,7 +843,7 @@ function App() {
       }
   };
 
-  const handleAddIntern = (userData: Omit<User, 'id' | 'role' | 'avatar'>) => {
+  const handleAddIntern = (userData: Omit<User, 'id' | 'role' | 'avatar' | 'status'>) => {
       const newUser: User = {
           ...userData,
           id: `temp_${Date.now()}`,

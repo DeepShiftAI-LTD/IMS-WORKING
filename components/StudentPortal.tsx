@@ -1,5 +1,4 @@
 
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { User, LogEntry, Task, TaskStatus, LogStatus, Report, ReportType, Goal, Resource, GoalStatus, TaskDeliverable, Evaluation, Message, Meeting, Skill, SkillAssessment, Role, Badge, UserBadge, LeaveRequest, LeaveType, LeaveStatus, SiteVisit } from '../types';
 import { Button, Card, StatusBadge, ScoreBar, FeedbackBadge } from './UI';
@@ -37,6 +36,7 @@ interface StudentPortalProps {
   onAddSkillAssessment: (assessment: Omit<SkillAssessment, 'id'>) => void;
   onUpdateProfile: (user: User) => void;
   onAddLeaveRequest: (request: Omit<LeaveRequest, 'id' | 'status'>) => void;
+  onAddSiteVisit: (visit: Omit<SiteVisit, 'id'>) => void;
 }
 
 type Tab = 'DASHBOARD' | 'REPORTS' | 'PLAN' | 'SKILLS' | 'RESOURCES' | 'EVALUATIONS' | 'MESSAGES' | 'ACHIEVEMENTS' | 'PROFILE' | 'LEAVE' | 'MEETINGS' | 'LOGBOOK' | 'SITE_VISITS' | 'PERFORMANCE' | 'ATTENDANCE';
@@ -49,7 +49,7 @@ const getLocalDate = () => {
 
 export const StudentPortal: React.FC<StudentPortalProps> = ({ 
   user, users, logs, tasks, reports, goals, resources, evaluations, messages, meetings, skills, skillAssessments, badges, userBadges, leaveRequests, siteVisits,
-  onAddLog, onUpdateTaskStatus, onAddReport, onUpdateGoal, onSubmitDeliverable, onSendMessage, onAddSkillAssessment, onUpdateProfile, onAddLeaveRequest
+  onAddLog, onUpdateTaskStatus, onAddReport, onUpdateGoal, onSubmitDeliverable, onSendMessage, onAddSkillAssessment, onUpdateProfile, onAddLeaveRequest, onAddSiteVisit
 }) => {
   const [activeTab, setActiveTab] = useState<Tab>('DASHBOARD');
   // Sub-tab for performance section

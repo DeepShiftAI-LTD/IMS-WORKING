@@ -1,5 +1,4 @@
 
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { User, LogEntry, Task, TaskStatus, LogStatus, TaskPriority, Report, Goal, Resource, GoalStatus, Evaluation, EvaluationType, FeedbackType, TaskFeedback, Message, Meeting, Role, Skill, SkillAssessment, Notification, NotificationType, Badge, UserBadge, LeaveRequest, LeaveStatus, SiteVisit, AttendanceException } from '../types';
 import { Button, Card, StatusBadge, ScoreBar, PriorityBadge, FeedbackBadge } from './UI';
@@ -34,7 +33,7 @@ interface SupervisorPortalProps {
   onApproveLog: (logId: string, approved: boolean, comment?: string) => void;
   onAddTask: (task: Omit<Task, 'id' | 'status' | 'createdAt'>) => void;
   onUpdateTaskStatus: (taskId: string, status: TaskStatus) => void;
-  onAddIntern: (user: Omit<User, 'id' | 'role' | 'avatar'>) => void;
+  onAddIntern: (user: Omit<User, 'id' | 'role' | 'avatar' | 'status'>) => void;
   onUpdateIntern: (user: User) => void;
   onAddGoal: (goal: Omit<Goal, 'id' | 'progress' | 'status'>) => void;
   onUpdateGoal: (goal: Goal) => void;
